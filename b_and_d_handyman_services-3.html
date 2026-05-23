@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B & D Handyman Services | Handyman Services | Pfafftown, NC</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1c2b3a;
+  --navyD:#141e28;
+  --rust:#8b3a1a;
+  --rustL:#b54a22;
+  --tan:#c8a882;
+  --cream:#f5f0e8;
+  --warmgray:#e8e0d0;
+  --brown:#3d2b1a;
+  --gray:#6b5f52;
+  --grayL:#9c8f82;
+  --white:#ffffff;
+  --red:#8b1a1a;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--brown);font-family:'Source Sans 3',sans-serif;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navyD);border-bottom:3px solid var(--rust);padding:0 6%;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:700;color:var(--white);letter-spacing:2px;text-decoration:none;text-transform:uppercase;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--tan);}
+.nav-cta{background:var(--rust);color:white;padding:9px 22px;font-family:'Oswald',sans-serif;font-weight:600;font-size:0.9rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:background 0.2s;border-left:3px solid var(--tan);}
+.nav-cta:hover{background:var(--rustL);}
+
+/* HERO */
+.hero{min-height:100vh;padding:90px 0 0;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero-left{background:var(--navy);padding:80px 6% 80px 6%;display:flex;flex-direction:column;justify-content:center;position:relative;}
+.hero-left::after{content:'';position:absolute;right:-40px;top:0;bottom:0;width:80px;background:var(--navy);clip-path:polygon(0 0,0 100%,100% 100%);z-index:2;}
+.hero-right{background:var(--cream);padding:80px 6% 80px 8%;display:flex;flex-direction:column;justify-content:center;position:relative;}
+.vet-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.08);border:1px solid rgba(200,168,130,0.3);padding:8px 18px;margin-bottom:28px;width:fit-content;}
+.vet-badge span{font-family:'Oswald',sans-serif;font-size:0.75rem;letter-spacing:3px;color:var(--tan);text-transform:uppercase;}
+.star{color:var(--tan);font-size:0.9rem;}
+.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:700;line-height:1.05;color:white;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+.hero h1 em{color:var(--tan);font-style:normal;display:block;}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:36px;max-width:420px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--rust);color:white;padding:14px 28px;font-family:'Oswald',sans-serif;font-weight:600;font-size:1rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;border-left:3px solid var(--tan);transition:background 0.2s;}
+.btn-primary:hover{background:var(--rustL);}
+.btn-secondary{background:transparent;color:white;padding:14px 28px;font-family:'Oswald',sans-serif;font-weight:600;font-size:1rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;border:2px solid rgba(255,255,255,0.25);transition:border-color 0.2s;}
+.btn-secondary:hover{border-color:var(--tan);}
+.hero-right h2{font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--navy);margin-bottom:28px;padding-bottom:14px;border-bottom:3px solid var(--rust);}
+.service-list{display:flex;flex-direction:column;gap:0;}
+.service-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--warmgray);font-size:0.95rem;font-weight:600;color:var(--brown);}
+.service-item::before{content:'';width:10px;height:10px;background:var(--rust);transform:rotate(45deg);flex-shrink:0;}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:32px;border:2px solid var(--navy);}
+.stat{text-align:center;padding:20px 10px;border-right:2px solid var(--navy);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;color:var(--rust);display:block;line-height:1;}
+.stat-label{font-size:0.72rem;color:var(--gray);letter-spacing:1px;text-transform:uppercase;margin-top:4px;display:block;}
+
+/* DIVIDER */
+.divider{background:var(--navy);padding:20px 6%;display:flex;align-items:center;justify-content:center;gap:20px;}
+.divider-text{font-family:'Oswald',sans-serif;font-size:0.8rem;letter-spacing:3px;color:var(--tan);text-transform:uppercase;}
+.divider-line{flex:1;height:1px;background:rgba(200,168,130,0.2);}
+
+/* SERVICES */
+#services{padding:80px 6%;background:var(--cream);}
+.section-eyebrow{font-family:'Oswald',sans-serif;font-size:0.75rem;letter-spacing:4px;color:var(--rust);text-transform:uppercase;margin-bottom:10px;display:block;}
+.section-title{font-family:'Oswald',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:12px;line-height:1.1;}
+.section-title span{color:var(--rust);}
+.section-sub{color:var(--gray);font-size:1rem;max-width:500px;line-height:1.7;margin-bottom:50px;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:var(--warmgray);}
+.service-card{background:var(--cream);padding:36px 28px;transition:background 0.2s;}
+.service-card:hover{background:var(--white);}
+.service-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--warmgray);line-height:1;margin-bottom:12px;}
+.service-card h3{font-family:'Oswald',sans-serif;font-size:1.15rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:10px;}
+.service-card p{color:var(--gray);font-size:0.9rem;line-height:1.65;}
+.service-accent{width:40px;height:3px;background:var(--rust);margin-bottom:16px;}
+
+/* ABOUT */
+#about{padding:0;display:grid;grid-template-columns:1fr 1fr;}
+.about-left{background:var(--navy);padding:80px 6%;}
+.about-right{background:var(--warmgray);padding:80px 6%;}
+.about-left .section-eyebrow{color:var(--tan);}
+.about-left .section-title{color:white;}
+.about-left p{color:rgba(255,255,255,0.65);line-height:1.8;font-size:0.98rem;margin-bottom:18px;}
+.owners{display:flex;gap:24px;margin-top:32px;}
+.owner{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(200,168,130,0.2);padding:20px;text-align:center;}
+.owner-initial{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--tan);line-height:1;margin-bottom:8px;}
+.owner-name{font-family:'Oswald',sans-serif;font-size:0.9rem;font-weight:600;color:white;letter-spacing:1px;text-transform:uppercase;}
+.owner-title{font-size:0.75rem;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
+.about-right .section-title{color:var(--navy);}
+.trust-list{display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+.trust-item{display:flex;align-items:flex-start;gap:14px;}
+.trust-icon{width:36px;height:36px;background:var(--warmgray);border:2px solid var(--rust);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;}
+.trust-content h4{font-family:'Oswald',sans-serif;font-size:0.9rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:3px;}
+.trust-content p{font-size:0.85rem;color:var(--gray);line-height:1.5;}
+
+/* CONTACT */
+#contact{padding:80px 6%;background:var(--brown);}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-info .section-eyebrow{color:var(--tan);}
+.contact-info .section-title{color:white;}
+.contact-info p{color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:32px;}
+.contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.contact-detail:last-of-type{border-bottom:none;}
+.contact-label{font-family:'Oswald',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--tan);display:block;margin-bottom:3px;}
+.contact-value{font-size:0.95rem;color:white;}
+.contact-form{background:var(--cream);padding:40px;}
+.contact-form h3{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--navy);margin-bottom:24px;padding-bottom:14px;border-bottom:3px solid var(--rust);}
+.form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:16px;}
+.form-group label{font-family:'Oswald',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+.form-group input,.form-group textarea,.form-group select{background:white;border:2px solid var(--warmgray);padding:11px 14px;color:var(--brown);font-family:'Source Sans 3',sans-serif;font-size:0.95rem;outline:none;transition:border-color 0.2s;width:100%;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--rust);}
+.form-group textarea{resize:vertical;min-height:100px;}
+.btn-form{width:100%;background:var(--rust);color:white;padding:14px;font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;border-left:4px solid var(--tan);transition:background 0.2s;}
+.btn-form:hover{background:var(--rustL);}
+
+/* FOOTER */
+footer{background:var(--navyD);padding:24px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;border-top:3px solid var(--rust);}
+.footer-brand{font-family:'Oswald',sans-serif;font-weight:700;color:white;font-size:1rem;letter-spacing:2px;text-transform:uppercase;}
+.footer-copy{color:rgba(255,255,255,0.35);font-size:0.78rem;letter-spacing:0.5px;}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{padding:100px 6% 50px;min-height:auto;}
+  .hero-left::after{display:none;}
+  .hero-right{padding:40px 6% 50px;}
+  .stats-row{grid-template-columns:repeat(3,1fr);}
+  #about{grid-template-columns:1fr;}
+  .about-left,.about-right{padding:60px 6%;}
+  .owners{flex-direction:column;gap:12px;}
+  .contact-inner{grid-template-columns:1fr;gap:40px;}
+  .nav-links{display:none;}
+  .nav-brand{font-size:0.95rem;letter-spacing:1px;}
+  .services-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;text-align:center;}
+  .hero-btns{flex-direction:column;}
+  .btn-primary,.btn-secondary{text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-brand">B & D Handyman Services</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:3365550000" class="nav-cta">📞 Call Now</a>
+</nav>
+
+<section id="hero" class="hero">
+  <div class="hero-left">
+    <div class="vet-badge"><span class="star">★</span><span>Veteran Owned & Operated</span></div>
+    <h1>Honest Work.<br><em>Fair Prices.</em></h1>
+    <p class="hero-sub">B & D Handyman Services has been fixing, building, and maintaining homes across Pfafftown and Piedmont NC for years. We do the job right — no shortcuts, no excuses.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="tel:3365550000" class="btn-secondary">(336) 555-0000</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <h2>What We Fix</h2>
+    <div class="service-list">
+      <div class="service-item">Carpentry & Wood Repairs</div>
+      <div class="service-item">Drywall & Patching</div>
+      <div class="service-item">Interior & Exterior Painting</div>
+      <div class="service-item">Plumbing Repairs</div>
+      <div class="service-item">Electrical Work</div>
+      <div class="service-item">Flooring Installation</div>
+      <div class="service-item">Pressure Washing</div>
+      <div class="service-item">Gutter Cleaning & Repair</div>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Yrs Experience</span></div>
+      <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Jobs Done</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Guaranteed</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-text">Licensed · Insured · Local · Dependable</div>
+  <div class="divider-line"></div>
+</div>
+
+<section id="services">
+  <span class="section-eyebrow">What We Do</span>
+  <h2 class="section-title">Our <span>Services</span></h2>
+  <p class="section-sub">No job too small. We handle the repairs and projects most folks put off — and we do it right the first time.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-accent"></div>
+      <h3>Carpentry & Repairs</h3>
+      <p>Doors, windows, trim, decks, fences — we fix, build, and restore woodwork to like-new condition using quality materials that last.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-accent"></div>
+      <h3>Painting</h3>
+      <p>Interior and exterior painting done properly — full prep, clean lines, no drips. We treat your home like our own.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-accent"></div>
+      <h3>Plumbing Repairs</h3>
+      <p>Leaky faucets, running toilets, clogged drains. Fast fixes that save water and keep money in your pocket.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-accent"></div>
+      <h3>Electrical Work</h3>
+      <p>Outlets, fixtures, ceiling fans, and more. Safe, done-right work that meets code and doesn't cut corners.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-accent"></div>
+      <h3>Drywall & Patching</h3>
+      <p>Holes, cracks, water damage — we patch, texture, and finish so you can't tell anything was there.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-accent"></div>
+      <h3>Exterior & Yard</h3>
+      <p>Pressure washing, gutter cleaning, deck sealing. Keeping your property looking sharp year-round.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-left">
+    <span class="section-eyebrow">About Us</span>
+    <h2 class="section-title">Built on Hard Work<br>& Handshakes</h2>
+    <p>B & D Handyman Services has been serving the Pfafftown area since 2020. Barry Lamb and Don Jones handle the work themselves — no subcontractors, no surprises.</p>
+    <p>Licensed, insured, and backed by years of hands-on experience across every trade.</p>
+    <div class="owners">
+      <div class="owner">
+        <div class="owner-initial">B</div>
+        <div class="owner-name">Barry Lamb</div>
+        <div class="owner-title">President · Veteran</div>
+      </div>
+      <div class="owner">
+        <div class="owner-initial">D</div>
+        <div class="owner-name">Don Jones</div>
+        <div class="owner-title">Vice President</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-right">
+    <span class="section-eyebrow">Why Choose Us</span>
+    <h2 class="section-title">We Just Do<br>Good Work</h2>
+    <div class="trust-list">
+      <div class="trust-item">
+        <div class="trust-icon">★</div>
+        <div class="trust-content">
+          <h4>Veteran Owned</h4>
+          <p>Barry served before he got into the trades. That carries over into how he runs the business.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">✓</div>
+        <div class="trust-content">
+          <h4>Licensed & Insured</h4>
+          <p>Fully covered. Registered with the NC Secretary of State. You're protected.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">$</div>
+        <div class="trust-content">
+          <h4>Free Estimates</h4>
+          <p>We'll come look at the job and give you a straight number. No pressure, no surprises.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📍</div>
+        <div class="trust-content">
+          <h4>Local</h4>
+          <p>We live and work right here in Pfafftown. This is our community too.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <span class="section-eyebrow">Get In Touch</span>
+      <h2 class="section-title">Call or Fill Out<br>the Form</h2>
+      <p>Give us a call or fill out the form and we'll get back to you same day. We'll come take a look and give you a fair estimate.</p>
+      <div class="contact-detail">
+        <div>
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">(336) 555-0000</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div>
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Pfafftown, NC — Serving Piedmont NC</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div>
+          <span class="contact-label">Hours</span>
+          <span class="contact-value">Monday – Saturday · 7am to 6pm</span>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="return false;">
+      <h3>Request a Free Quote</h3>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="John Smith">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(336) 555-0000">
+      </div>
+      <div class="form-group">
+        <label>Service Needed</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>Carpentry & Repairs</option>
+          <option>Painting</option>
+          <option>Plumbing Repairs</option>
+          <option>Electrical Work</option>
+          <option>Drywall & Patching</option>
+          <option>Exterior & Yard Work</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Describe the Job</label>
+        <textarea placeholder="Tell us what needs to be done..."></textarea>
+      </div>
+      <button type="submit" class="btn-form">Send My Request</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">B & D Handyman Services</div>
+  <div class="footer-copy">© 2025 B & D Handyman Services · Pfafftown, NC · All rights reserved</div>
+  <div class="footer-copy">Site by Carolina Canvas Studio</div>
+</footer>
+
+</body>
+</html>
