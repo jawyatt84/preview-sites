@@ -1,0 +1,427 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gentry & Son Plumbing | Expert Plumbing Services in Mt Airy, NC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #003d82;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.1rem;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 61, 130, 0.8), rgba(0, 61, 130, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23004080" width="1200" height="600"/><path fill="%23003366" d="M0 300L50 320L100 310L150 330L200 315L250 335L300 320L350 340L400 325L450 345L500 330L550 350L600 335L650 355L700 340L750 360L800 345L850 365L900 350L950 370L1000 355L1050 375L1100 360L1150 380L1200 365V600H0Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #003d82;
+        }
+
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .about-features {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .feature {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ff6b35;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .feature h3 {
+            color: #003d82;
+            margin-bottom: 5px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-top: 4px solid #003d82;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #003d82;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .contact {
+            background: #003d82;
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #ff6b35;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            background: #ff6b35;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: #e55a2b;
+        }
+
+        footer {
+            background: #002147;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            header .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🔧 Gentry & Son Plumbing</div>
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span>4.7 Rating</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Mt Airy's Trusted Plumbing Experts</h1>
+            <p>Family-Owned & Operated • Serving Our Community with Pride</p>
+            <a href="#contact" class="cta-button">Call Us Today!</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">About Gentry & Son Plumbing</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to Gentry & Son Plumbing, your trusted local plumbing experts serving Mt Airy, NC and the surrounding areas. As a family-owned and operated business, we understand the importance of quality workmanship and personalized service.</p>
+                    <p>With years of experience under our belts, we've built our reputation on reliability, honesty, and exceptional customer service. When you call Gentry & Son Plumbing, you're calling neighbors who care about your home as much as you do.</p>
+                    <p>Located right here at 119 Peace Haven Cir in Mt Airy, we're always close by when you need us most. From emergency repairs to planned installations, we're here for you 24/7.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature">
+                        <h3>✓ Licensed & Insured</h3>
+                        <p>Fully certified professionals you can trust</p>
+                    </div>
+                    <div class="feature">
+                        <h3>✓ Local Family Business</h3>
+                        <p>Proud members of the Mt Airy community</p>
+                    </div>
+                    <div class="feature">
+                        <h3>✓ 24/7 Emergency Service</h3>
+                        <p>We're here when you need us most</p>
+                    </div>
+                    <div class="feature">
+                        <h3>✓ Upfront Pricing</h3>
+                        <p>No hidden fees, just honest service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚰</div>
+                    <h3>Emergency Plumbing</h3>
+                    <p>24/7 emergency service for burst pipes, major leaks, and urgent plumbing issues. We're always ready to help Mt Airy residents.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Repairs & Maintenance</h3>
+                    <p>From dripping faucets to running toilets, we handle all residential and commercial plumbing repairs with expertise.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚿</div>
+                    <h3>Fixture Installation</h3>
+                    <p>Professional installation of sinks, toilets, showers, water heaters, and all plumbing fixtures.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Drain Cleaning</h3>
+                    <p>Advanced drain cleaning and sewer line services to keep your plumbing flowing smoothly.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Water Heater Service</h3>
+                    <p>Water heater installation, repair, and maintenance for both tank and tankless systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Remodeling Plumbing</h3>
+                    <p>Complete plumbing solutions for bathroom and kitchen remodeling projects throughout Mt Airy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us Today</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <strong>Visit Us:</strong><br>
+                            119 Peace Haven Cir<br>
+                            Mt Airy, NC 27030, USA
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <strong>Call Us:</strong><br>
+                            (336) 555-PIPE<br>
+                            Available 24/7 for Emergencies
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">⏰</div>
+                        <div>
+                            <strong>Business Hours:</strong><br>
+                            Monday - Friday: 7AM - 6PM<br>
+                            Saturday: 8AM - 4PM<br>
+                            Sunday: Emergency Calls Only
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">⭐</div>
+                        <div>
+                            <strong>4.7 Star Rating</strong><br>
+                            Trusted by Mt Airy Homeowners
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Request a Service Call</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <textarea placeholder="Describe your plumbing needs..." required></textarea>
+                        <button type="submit">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gentry & Son Plumbing. Proudly Serving Mt Airy, NC and Surrounding Areas.</p>
+            <p>Licensed • Insured • Family-Owned • Trusted Since Day One</p>
+        </div>
+    </footer>
+</body>
+</html>
+```
