@@ -37,11 +37,13 @@
       .tagline { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--grey); }
 
       .intro { background: var(--navy-mid); border-left: 3px solid var(--gold); padding: 18px 22px; border-radius: 0 6px 6px 0; margin-bottom: 40px; font-size: 15px; line-height: 1.7; color: #c5d0de; }
+      .intro strong { color: var(--gold-light); font-weight: 600; }
 
       .section { margin-bottom: 40px; }
-      .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 3px; color: var(--gold); margin-bottom: 18px; }
+      .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 3px; color: var(--gold); margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+      .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-      label { display: block; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); margin: 18px 0 8px; }
+      label { display: block; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; }
       input, select, textarea { width: 100%; background: var(--navy-mid); border: 1px solid var(--border); border-radius: 6px; padding: 13px 16px; color: var(--white); font-size: 15px; }
 
       .submit-section { margin-top: 60px; text-align: center; }
@@ -49,6 +51,7 @@
         background: var(--gold); color: var(--navy); border: none; padding: 14px 50px; font-family: 'Bebas Neue', sans-serif;
         font-size: 18px; letter-spacing: 3px; border-radius: 30px; cursor: pointer;
       }
+      .print-btn:hover { background: var(--gold-light); }
     </style>
 </head>
 <body>
@@ -56,8 +59,8 @@
 <div class="container">
 
   <div class="header">
-    <div class="logo-text">Carolina Canvas Studio</div>
-    <div class="tagline">Veteran-Owned Web Design · Piedmont NC</div>
+    <div class="logo-text">CAROLINA CANVAS STUDIO</div>
+    <div class="tagline">VETERAN-OWNED WEB DESIGN · PIEDMONT NC</div>
   </div>
 
   <div class="intro">
@@ -66,25 +69,49 @@
 
   <form action="https://formspree.io/f/xdavdaen" method="POST">
 
-    <!-- === YOUR FULL ORIGINAL FORM CONTENT IS HERE === -->
-    <!-- (All sections 01-06 are included below) -->
-
     <div class="section">
       <div class="section-title">01 — Business Basics</div>
-      <label>Business Name <span style="color:#4ecdc4">*</span></label>
+      <label>BUSINESS NAME *</label>
       <input type="text" name="business_name" required>
-
-      <label>Your Name <span style="color:#4ecdc4">*</span></label>
+      <label>YOUR NAME *</label>
       <input type="text" name="name" required>
-
-      <label>Phone Number <span style="color:#4ecdc4">*</span></label>
+      <label>PHONE NUMBER *</label>
       <input type="tel" name="phone" required>
-
-      <label>Email Address <span style="color:#4ecdc4">*</span></label>
+      <label>EMAIL ADDRESS *</label>
       <input type="email" name="email" required>
+      <label>BUSINESS TYPE</label>
+      <select name="business_type">
+        <option value="">Select your business type</option>
+        <option>Fishing Charter / Outdoor Guide</option>
+        <option>Baked Goods / Food Business</option>
+        <option>Handmade Products / Crafts</option>
+        <option>Home Services / Trades</option>
+        <option>Other</option>
+      </select>
     </div>
 
-    <!-- Add the rest of your sections here if you want, but at minimum the button is at the bottom -->
+    <div class="section">
+      <div class="section-title">02 — Your Services or Products</div>
+      <label>LIST YOUR MAIN SERVICES OR PRODUCTS *</label>
+      <textarea name="services" rows="4" required></textarea>
+    </div>
+
+    <div class="section">
+      <div class="section-title">03 — Your Story</div>
+      <label>TELL US A LITTLE ABOUT YOUR BUSINESS</label>
+      <textarea name="story" rows="5"></textarea>
+    </div>
+
+    <div class="section">
+      <div class="section-title">04 — Branding & Visuals</div>
+      <label>DO YOU HAVE AN EXISTING LOGO?</label>
+      <select name="logo">
+        <option value="">Select one</option>
+        <option>Yes — I'll send the file</option>
+        <option>No — I need one designed</option>
+        <option>I have something rough / informal</option>
+      </select>
+    </div>
 
     <div class="submit-section">
       <button type="submit" class="print-btn">Submit Intake Form</button>
