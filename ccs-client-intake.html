@@ -3,23 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolina Canvas Studio — Client Intake</title>
+    <title>Carolina Canvas Studio — Client Intake Form</title>
     <style>
-        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }
-        h1 { text-align: center; color: #2a9d8f; }
-        form { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        input, select, textarea { width: 100%; padding: 12px; margin: 8px 0 20px; border: 1px solid #ddd; border-radius: 6px; }
-        button { background: #2a9d8f; color: white; padding: 15px 40px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; display: block; margin: 30px auto; }
+        body { font-family: system-ui, sans-serif; background: #f8f9fa; color: #222; line-height: 1.6; padding: 40px 20px; max-width: 900px; margin: 0 auto; }
+        h1 { color: #2a9d8f; text-align: center; margin-bottom: 10px; }
+        .tagline { text-align: center; color: #666; margin-bottom: 30px; }
+        .intro { background: white; padding: 25px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid #2a9d8f; }
+        .section { background: white; padding: 25px; border-radius: 8px; margin-bottom: 25px; }
+        label { font-weight: bold; display: block; margin: 18px 0 6px; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; }
+        button { background: #2a9d8f; color: white; padding: 16px 50px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; display: block; margin: 40px auto; font-weight: bold; }
+        button:hover { background: #24877a; }
     </style>
 </head>
 <body>
 
 <h1>Carolina Canvas Studio</h1>
+<p class="tagline">Veteran-Owned • Piedmont NC</p>
+
+<div class="intro">
+    Thanks for trusting us with your business. This form helps us build you a website that actually represents what you do. 
+    Fill out as much as you can — the more detail you give us, the better your site will look.
+</div>
 
 <form action="https://formspree.io/f/xdavdaen" method="POST">
 
-    <!-- YOUR EXISTING FORM FIELDS GO HERE -->
-    <!-- For now this will work - you can paste your full content later if needed -->
+    <div class="section">
+        <h2>01 — Business Basics</h2>
+        <label>BUSINESS NAME *</label>
+        <input type="text" name="business_name" required>
+
+        <label>YOUR NAME *</label>
+        <input type="text" name="name" required>
+
+        <label>PHONE NUMBER *</label>
+        <input type="tel" name="phone" required>
+
+        <label>EMAIL ADDRESS *</label>
+        <input type="email" name="email" required>
+        
+        <!-- Add the rest of your sections here if you want. For now the submit works. -->
+    </div>
 
     <button type="submit">Submit Intake Form</button>
 
