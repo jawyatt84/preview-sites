@@ -23,6 +23,7 @@
         background-size: 40px 40px;
         color: var(--white);
         font-family: 'Source Sans 3', sans-serif;
+        font-weight: 300;
         min-height: 100vh;
         padding: 40px 20px 80px;
       }
@@ -35,74 +36,213 @@
       .section { margin-bottom: 40px; }
       .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 3px; color: var(--gold); margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
       .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-      label { display: block; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); margin: 18px 0 8px; }
-      input, select, textarea { width: 100%; background: var(--navy-mid); border: 1px solid var(--border); border-radius: 6px; padding: 13px 16px; color: var(--white); font-size: 15px; }
-      input:focus, textarea:focus, select:focus { border-color: var(--gold); background: var(--navy-light); }
+      .field { margin-bottom: 20px; }
+      label { display: block; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; }
+      input, select, textarea { width: 100%; background: var(--navy-mid); border: 1px solid var(--border); border-radius: 6px; padding: 13px 16px; color: var(--white); font-size: 15px; font-family: inherit; }
+      input:focus, textarea:focus, select:focus { border-color: var(--gold); background: var(--navy-light); outline: none; }
+      .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+      .checkbox-item { display: flex; align-items: center; gap: 8px; }
+      .checkbox-item input { width: auto; }
       .submit-section { margin-top: 60px; text-align: center; }
-      .print-btn { background: var(--gold); color: var(--navy); border: none; padding: 14px 50px; font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 3px; border-radius: 30px; cursor: pointer; }
-      .print-btn:hover { background: var(--gold-light); }
+      .submit-btn { background: var(--gold); color: var(--navy); border: none; padding: 14px 50px; font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 3px; border-radius: 30px; cursor: pointer; }
+      .submit-btn:hover { background: var(--gold-light); }
+      .footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border); font-size: 12px; color: var(--grey); letter-spacing: 1px; }
     </style>
 </head>
 <body>
+
 <div class="container">
+
   <div class="header">
     <div class="logo-text">CAROLINA CANVAS STUDIO</div>
     <div class="tagline">VETERAN-OWNED WEB DESIGN · PIEDMONT NC</div>
   </div>
+
   <div class="intro">
     Thanks for trusting us with your business. This form helps us build you a website that actually represents what you do. <strong>Fill out as much as you can</strong> — the more detail you give us, the better your site will look.
   </div>
+
   <form action="https://formspree.io/f/xdavdaen" method="POST">
+
+    <!-- 01 — BUSINESS BASICS -->
     <div class="section">
       <div class="section-title">01 — BUSINESS BASICS</div>
-      <label>BUSINESS NAME *</label>
-      <input type="text" name="business_name" required>
-      <label>YOUR NAME *</label>
-      <input type="text" name="name" required>
-      <label>PHONE NUMBER *</label>
-      <input type="tel" name="phone" required>
-      <label>EMAIL ADDRESS *</label>
-      <input type="email" name="email" required>
+
+      <div class="field">
+        <label>BUSINESS NAME *</label>
+        <input type="text" name="business_name" required>
+      </div>
+
+      <div class="field">
+        <label>YOUR NAME *</label>
+        <input type="text" name="name" required>
+      </div>
+
+      <div class="field">
+        <label>PHONE NUMBER *</label>
+        <input type="tel" name="phone" required>
+      </div>
+
+      <div class="field">
+        <label>EMAIL ADDRESS *</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <div class="field">
+        <label>LOCATION / SERVICE AREA</label>
+        <input type="text" name="location" placeholder="e.g., Piedmont NC, Charlotte area, 50-mile radius">
+      </div>
+
+      <div class="field">
+        <label>ONE-LINE DESCRIPTION OF WHAT YOU DO</label>
+        <input type="text" name="one_liner" placeholder="Your elevator pitch">
+      </div>
     </div>
+
+    <!-- 02 — YOUR SERVICES OR PRODUCTS -->
     <div class="section">
       <div class="section-title">02 — YOUR SERVICES OR PRODUCTS</div>
-      <label>LIST YOUR MAIN SERVICES OR PRODUCTS *</label>
-      <textarea name="services" rows="4" required></textarea>
+
+      <div class="field">
+        <label>LIST YOUR MAIN SERVICES OR PRODUCTS *</label>
+        <textarea name="services" rows="4" required placeholder="Include pricing if you want it shown on the site. If you'd rather not show prices, just list the offerings."></textarea>
+      </div>
+
+      <div class="field">
+        <label>DO YOU WANT PRICING SHOWN ON THE WEBSITE?</label>
+        <select name="pricing_display">
+          <option value="">Select one</option>
+          <option>Yes — show prices</option>
+          <option>No — "contact for pricing"</option>
+          <option>Some prices, not all</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>HOURS OF OPERATION (IF APPLICABLE)</label>
+        <textarea name="hours" rows="3" placeholder="Monday–Friday 9am–5pm, etc."></textarea>
+      </div>
     </div>
+
+    <!-- 03 — YOUR STORY -->
     <div class="section">
       <div class="section-title">03 — YOUR STORY</div>
-      <label>TELL US A LITTLE ABOUT YOUR BUSINESS</label>
-      <textarea name="story" rows="5"></textarea>
+
+      <div class="field">
+        <label>TELL US A LITTLE ABOUT YOUR BUSINESS</label>
+        <textarea name="story" rows="5" placeholder="History, mission, what makes you different"></textarea>
+      </div>
+
+      <div class="field">
+        <label>ANY LICENSES, CERTIFICATIONS, OR CREDENTIALS TO HIGHLIGHT?</label>
+        <textarea name="credentials" rows="3"></textarea>
+      </div>
     </div>
+
+    <!-- 04 — BRANDING & VISUALS -->
     <div class="section">
       <div class="section-title">04 — BRANDING & VISUALS</div>
-      <label>DO YOU HAVE AN EXISTING LOGO?</label>
-      <select name="logo">
-        <option value="">Select one</option>
-        <option>Yes — I'll send the file</option>
-        <option>No — I need one designed</option>
-        <option>I have something rough / informal</option>
-      </select>
+
+      <div class="field">
+        <label>DO YOU HAVE AN EXISTING LOGO?</label>
+        <select name="logo_status">
+          <option value="">Select one</option>
+          <option>Yes — I'll send the file</option>
+          <option>No — I need one designed</option>
+          <option>I have something rough / informal</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>PREFERRED COLORS (IF ANY)</label>
+        <input type="text" name="colors" placeholder="e.g., navy and gold, earth tones, modern black">
+      </div>
+
+      <div class="field">
+        <label>PHOTOS — WHAT DO YOU HAVE AVAILABLE?</label>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" name="photos" value="work_products">
+            PHOTOS OF MY WORK / PRODUCTS
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="photos" value="team">
+            PHOTOS OF ME OR MY TEAM
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="photos" value="location">
+            PHOTOS OF MY LOCATION OR WORKSPACE
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="photos" value="none">
+            I DON'T HAVE PHOTOS YET
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" name="photos" value="can_take">
+            I CAN TAKE PHOTOS IF NEEDED
+          </label>
+        </div>
+        <p style="font-size: 12px; color: var(--grey); margin-top: 12px;">Good photos make a huge difference. If you don't have any, we can work with stock images or help you plan a quick photo session.</p>
+      </div>
     </div>
+
+    <!-- 05 — ONLINE PRESENCE -->
     <div class="section">
       <div class="section-title">05 — ONLINE PRESENCE</div>
-      <label>EXISTING WEBSITE (IF ANY)</label>
-      <input type="url" name="website">
-      <label>SOCIAL MEDIA HANDLES</label>
-      <textarea name="social" rows="3"></textarea>
+
+      <div class="field">
+        <label>EXISTING WEBSITE (IF ANY)</label>
+        <input type="url" name="existing_website" placeholder="https://yoursite.com">
+      </div>
+
+      <div class="field">
+        <label>SOCIAL MEDIA HANDLES TO LINK</label>
+        <textarea name="social_media" rows="3" placeholder="Instagram: @yourhandle, Facebook: facebook.com/yourpage, etc."></textarea>
+      </div>
+
+      <div class="field">
+        <label>GOOGLE BUSINESS PROFILE?</label>
+        <select name="google_business">
+          <option value="">Select one</option>
+          <option>Yes — already set up</option>
+          <option>No — I don't have one</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>PREFERRED DOMAIN NAME (IF YOU HAVE ONE IN MIND)</label>
+        <input type="text" name="domain_preference" placeholder="e.g., smithfishingcharters.com — we'll check availability">
+      </div>
     </div>
+
+    <!-- 06 — ANYTHING ELSE -->
     <div class="section">
       <div class="section-title">06 — ANYTHING ELSE</div>
-      <label>ANYTHING SPECIFIC YOU WANT ON YOUR SITE?</label>
-      <textarea name="additional" rows="4"></textarea>
+
+      <div class="field">
+        <label>IS THERE ANYTHING SPECIFIC YOU WANT ON YOUR SITE?</label>
+        <textarea name="specific_features" rows="4" placeholder="e.g., A booking form, a photo gallery, a testimonials section, an FAQ — anything you've seen on other sites that you liked."></textarea>
+      </div>
+
+      <div class="field">
+        <label>ANY SITES YOU LIKE THE LOOK OF? (FOR DESIGN INSPIRATION)</label>
+        <textarea name="design_inspiration" rows="3" placeholder="Paste a URL or describe the vibe — clean and modern, rustic, bold, simple, etc."></textarea>
+      </div>
     </div>
+
+    <!-- SUBMIT -->
     <div class="submit-section">
-      <button type="submit" class="print-btn">SUBMIT INTAKE FORM</button>
+      <button type="submit" class="submit-btn">SUBMIT INTAKE FORM</button>
     </div>
+
   </form>
-  <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border); font-size: 12px; color: var(--grey);">
+
+  <div class="footer">
     Carolina Canvas Studio · Veteran-Owned · Clemmons, NC · carolinacanvasstudio.com
   </div>
+
 </div>
+
 </body>
 </html>
